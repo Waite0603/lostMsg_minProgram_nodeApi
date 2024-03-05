@@ -1,3 +1,24 @@
+## 环境要求
+
+- nodejs
+- mongodb
+
+## 项目启动
+  
+  ```bash
+  # 安装依赖
+  npm install
+
+  # 启动项目
+  node index.js
+
+  ## 正常启动后, 显示如下信息
+  ## server running!
+  ## 数据库连接成功!
+  ## 访问 http://localhost:30001 即可
+  ```
+
+
 1. 下载nodejs框架express
 npm install express --save
 2. 切换npm镜像源为淘宝镜像源
@@ -12,5 +33,3 @@ npm install multer --save
 npm install uuid --save
 7. 下载axios实现网络请求
 npm install axios --save
-
-前端想访问后端, 就要通过接口来访问
