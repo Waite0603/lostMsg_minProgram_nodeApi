@@ -82,6 +82,12 @@ const UserSchema = new mongoose.Schema({
     openid: {           // 用户ID
         type: String
     },
+    avatar: {           // 头像
+        type: String
+    },
+    nickname: {         // 昵称
+        type: String
+    },
     username: {         // 用户名
         type: String
     },
@@ -122,14 +128,14 @@ const Admin = mongoose.model("Admin", AdminSchema);
 //     Lose.create({
 //         openid: 'o1rUR5dHCRwTftgzmc6sh4hE8bwM',
 //         type: 0,
-//         classify1: '卡片、证件类',
-//         classify2: '身份证',
+//         classify1: '数码产品',
+//         classify2: '相机',
 //         name: '1',
 //         date: '2',
 //         region: '3',
 //         phone: '4',
 //         desc: '5',
-//         imgList: [ "http://localhost:3001/file/b4109e31-00e7-44e9-af83-e7eaeb56f50d.png" ],
+//         imgList: [ "http://127.0.0.1:30001/file/943be9e8-3c95-49a3-840e-c6e3775f133c.jpg" ],
 //         time: 1669212404681
 //     })
 // }

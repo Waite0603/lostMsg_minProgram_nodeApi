@@ -140,6 +140,7 @@ app.get("/getMyPublish", async (req, res) => {
 // 通过二级分类查数据
 app.post("/getClassifyTwo", async (req, res) => {
     const { type, classify2 } = req.body;
+    console.log(type, classify2);
     const result = await Lose.find({
         type,
         classify2
@@ -169,7 +170,14 @@ app.get("/searchLose", async (req, res) => {
 
 // 注册
 app.post('/register', async (req, res) => {
-    const { openid, username, password, date } = req.body;
+    console.log(req.body);
+    const { avatar, nickname, username, password } = req.body;
+    const data = new Date();
+    // Number
+    const date = data.getTime();
+    // 随机生成一个openid
+    const openid = v4();
+    console.log(openid);
     const result = await User.findOne({
         username
     });
@@ -179,11 +187,15 @@ app.post('/register', async (req, res) => {
     } else {
         await User.create({
             openid,
+            avatar,
+            nickname,
             username,
             password,
             date
         });
-        res.send("success");
+        res.send({
+            "openid": openid
+        });
     }
 })
 
@@ -195,7 +207,8 @@ app.post("/toLogin", async (req, res) => {
     });
     if (result) {
         if (result.password === password) {
-            res.send("success");
+            console.log(result);
+            res.send(result);
         } else {
             res.send("pwdError")
         }
