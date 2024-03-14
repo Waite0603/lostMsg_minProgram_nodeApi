@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // 连接mongodb数据库
-mongoose.connect("mongodb://127.0.0.1:27017/loseMg")
+mongoose.connect("mongodb://127.0.0.1:27017/loseMsg")
 .then(() => {
     console.log("数据库连接成功!")
 })
@@ -135,7 +135,7 @@ const Admin = mongoose.model("Admin", AdminSchema);
 //         region: '3',
 //         phone: '4',
 //         desc: '5',
-//         imgList: [ "http://127.0.0.1:30001/file/943be9e8-3c95-49a3-840e-c6e3775f133c.jpg" ],
+//         imgList: [ "http://127.0.0.1:30001/file/94945613-25da-406e-8ffa-1e4aa31ddf02.png" ],
 //         time: 1669212404681
 //     })
 // }
